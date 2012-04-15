@@ -1,0 +1,2 @@
+This is the Default Text file for getDownNow that display general info about the directory. This file is named
+"index.txt" but is hidden from the directory listing. 
