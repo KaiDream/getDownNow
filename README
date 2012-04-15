@@ -1,0 +1,63 @@
+
+/*
+ * getDownNow v1.0.0 - Directory Browser
+ * Copyright (C) 2005 Ray Lopez (http://getdownnow.sourceforge.net)
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or (at
+ * your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+ */
+
+Intro:
+	getDownNow is a directory browser in PHP to replace normal directory browsing from the web server. 
+
+
+Requirements:
+        PHP 
+
+Install:
+	Place in the directory you wish to make files availble from. Open index.php to configure any specific variables.
+	You can also edit index.txt to give the directory a description of what it contains or other infroamtion you wish.
+
+
+History:
+        + Added
+        ! Fixed
+        ? Problem/Bug
+	- Removed
+ver 1.0.0
+	+ Compress Fils Support for tar.gz/tgz/zip files
+	+ Added SWF file support for viewing
+	+ Increased view window width/height
+	+ Moved to SourceForge
+	! Strutured arrays for View File Types from drynamic.
+ver 0.9.5
+	! Alphabetical Listings for files and directories
+	! Directories come first in listing now
+
+ver 0.9.4
+	+ Style Sheet Context - Embedded Style Sheet or Location of Style sheet
+	+ Viewable File Type
+	+ Comments and descriptive info in script
+	- Script variables (such as version etc)
+
+ver 0.9.3
+	+ Text file viewing popup.
+	! file types will now show file extension
+
+ver 0.9.1
+	+ index.txt support for directory list.
+
+ver 0.9.0
+        + Started workx
+
