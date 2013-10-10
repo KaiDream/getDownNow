@@ -35,7 +35,7 @@ History:
         ! Fixed
         ? Problem/Bug
 	- Removed
-ver 1.0.0
+ver 1.0.1
 	! Fix proper PHP open tags
 ver 1.0.0
 	+ Compress Fils Support for tar.gz/tgz/zip files
