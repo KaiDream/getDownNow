@@ -1,4 +1,4 @@
-<?
+<?php
 /*
  * getDownNow - Directory Browser
  * Copyright (C) 2001 Ray Lopez (http://www.TheDreaming.com)
@@ -306,14 +306,14 @@ if(isset($_REQUEST["getfile"]) && isset($_REQUEST["cfile"]) && $CompressedFilesS
 <html>
 	<head>
 
-	<? if($scriptLocation == "") { 
+	<?php if($scriptLocation == "") { 
 		print($scriptCSS); 
 	} else {
 		print("<LINK REL=stylesheet HREF=\"$scriptLocation\" TYPE=\"text/css\">");
 	} ?>
 	</head>
 <body>
-<?
+<?php
 	diskStats($scriptStats);
 	print(dirHeader());
 	print(dirTable());

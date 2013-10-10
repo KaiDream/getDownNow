@@ -1,6 +1,6 @@
 
 /*
- * getDownNow v1.0.0 - Directory Browser
+ * getDownNow v1.0.1 - Directory Browser
  * Copyright (C) 2005 Ray Lopez (http://getdownnow.sourceforge.net)
  *
  * This program is free software; you can redistribute it and/or modify
@@ -35,6 +35,8 @@ History:
         ! Fixed
         ? Problem/Bug
 	- Removed
+ver 1.0.0
+	! Fix proper PHP open tags
 ver 1.0.0
 	+ Compress Fils Support for tar.gz/tgz/zip files
 	+ Added SWF file support for viewing
