@@ -1,7 +1,7 @@
 
 /*
- * getDownNow v1.0.1 - Directory Browser
- * Copyright (C) 2005 Ray Lopez (http://getdownnow.sourceforge.net)
+ * getDownNow v2.0.0 - Directory Browser
+ * Copyright (C) 2005-2015 Ray Lopez (https://github.com/KaiDream/getDownNow)
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -35,6 +35,9 @@ History:
         ! Fixed
         ? Problem/Bug
 	- Removed
+ver 2.0.0
+	! Modernizing code base
+	+ Bootstrap - http://getbootstrap.com/
 ver 1.0.1
 	! Fix proper PHP open tags
 ver 1.0.0
@@ -61,5 +64,5 @@ ver 0.9.1
 	+ index.txt support for directory list.
 
 ver 0.9.0
-        + Started workx
+	+ Started work
 
