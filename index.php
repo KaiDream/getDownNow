@@ -1,7 +1,7 @@
 <?php
 /*
  * getDownNow - Directory Browser
- * Copyright (C) 2001 Ray Lopez (http://www.TheDreaming.com)
+ * Copyright (C) 2001-2015 Ray Lopez (https://github.com/KaiDream/getDownNow)
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -35,7 +35,7 @@ $display_zip_contents = true; // Allow Diplsyaing Compressed File Contents
 
 $scriptCSS = "
 <style>
-/*
+
 BODY {
   margin: 1em;
   font-family: Arial;
@@ -43,11 +43,11 @@ BODY {
   background: #3f3f3f;
   color: #999999;
 }
-*/
-/* A:link { color: #cccccc;} */         /* unvisited link */
-/* A:visited { color: #cccccc;} */       /* visited links */
-/* A:active { color: #555555; background: #999999;} */        /* active links */
-/* A:hover { color: #cccccc; background: #555555;} */
+
+ A:link { color: #cccccc;}          /* unvisited link */
+ A:visited { color: #cccccc;}        /* visited links */
+ A:active { color: #555555;}         /* active links */
+ A:hover { color: #cccccc;}
 
 /* TD { background: #555555 } */
 
@@ -71,7 +71,7 @@ if ($display_zip_contents) {
 
 function dirHeader()
 {
-    $content = "<table width=100% nowrap>";
+    $content = "<table width=100% nowrap class='table-hover'>";
     return $content;
 }
 
@@ -79,7 +79,7 @@ function compHeader()
 {
 
     $content = "<table width=100% nowrap><tr><td>Viewing File: {$_REQUEST["cfile"]} </td></tr></table>";
-    $content .= "<table width=100% nowrap class='table table-striped'>";
+    $content .= "<table width=100% nowrap class='table'>";
     return $content;
 }
 
@@ -94,7 +94,7 @@ function compFooter()
 function dirTable($header = 1)
 {
     $content = ($header) ? "<thead>" : "<tfoot>";
-    $content .= "<tr><td>Type</td><td width=50%>Name</td><td>Size</td><td>Modified</td></tr>";
+    $content .= "<tr><th>Type</th><th width=50%>Name</th><th>Size</th><th>Modified</th></tr>";
     $content .= ($header) ? "</thead>" : "</tfoot>";
     return $content;
 }
@@ -174,7 +174,7 @@ function compDisplay()
         }
         $content .= "</tbody>";
     } else if (($ctype == "tgz") || ($ctype == "gz")) {
-        $outlines = split("\n", shell_exec("tar -ztvf " . escapeshellcmd($cfile)));
+        $outlines = explode("\n", shell_exec("tar -ztvf " . escapeshellcmd($cfile)));
         if (count($outlines) > 1) {
             $content = "<thead><tr>";
             $content .= "<td width=100%>Name</td>";
@@ -299,7 +299,7 @@ function diskStats($scriptStats)
     if ($scriptStats) {
 //		$diskTotal = display_size(disk_total_space("/"));
         $diskFree = display_size(diskfreespace("/"));
-        $content = "<table width=100% class='table table-striped' >";
+        $content = "<table width=100% class='table' >";
         $content .= "<tr><td width=150>Free Disk Space:</td><td>{$diskFree}</td></tr>";
 //		$content .= "<tr><td width=150>Total Disk Space:</td><td>{$diskFree}</td></tr>";
         $content .= "</table>";
@@ -310,7 +310,7 @@ function diskStats($scriptStats)
 if (isset($_REQUEST["getfile"]) && isset($_REQUEST["cfile"]) && $CompressedFilesSupport) {
     header("Content-type: application/octet-stream");
     if ($_REQUEST["cftype"] == "tgz") {
-        $getfile = split("/", $_REQUEST["getfile"]);
+        $getfile = explode("/", $_REQUEST["getfile"]);
         $getfile = $getfile[count($getfile) - 1];
         header("Content-Disposition: inline; filename=" . $getfile);
         $execmd = "tar -zxvf " . escapeshellcmd($_REQUEST["cfile"]) . " " . escapeshellcmd($_REQUEST["getfile"]) . " -O";
@@ -318,7 +318,7 @@ if (isset($_REQUEST["getfile"]) && isset($_REQUEST["cfile"]) && $CompressedFiles
         header("Content-Disposition: inline; filename=" . $_REQUEST["getfile"]);
         $execmd = "gunzip -dc " . escapeshellcmd($_REQUEST["cfile"]);
     } else if ($_REQUEST["cftype"] == "zip") {
-        $getfile = split("/", $_REQUEST["getfile"]);
+        $getfile = explode("/", $_REQUEST["getfile"]);
         $getfile = $getfile[count($getfile) - 1];
         header("Content-Disposition: inline; filename=" . $getfile);
         $execmd = "unzip -p " . escapeshellcmd($_REQUEST["cfile"]) . " " . escapeshellcmd($_REQUEST["getfile"]);
